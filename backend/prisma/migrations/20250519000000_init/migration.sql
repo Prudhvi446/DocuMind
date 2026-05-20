@@ -69,5 +69,5 @@ ALTER TABLE "DocumentChunk" ADD CONSTRAINT "DocumentChunk_documentId_fkey" FOREI
 ALTER TABLE "QueryLog" ADD CONSTRAINT "QueryLog_tenantId_fkey" FOREIGN KEY ("tenantId") REFERENCES "Tenant"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- Vector index for similarity search
-CREATE INDEX ON "DocumentChunk"
-  USING ivfflat (embedding vector_cosine_ops) WITH (lists = 100);
+CREATE INDEX "DocumentChunk_embedding_idx" ON "DocumentChunk"
+  USING hnsw (embedding vector_cosine_ops);
