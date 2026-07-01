@@ -25,6 +25,10 @@ app.get("/health", (_req, res) => {
 
 app.use(errorHandler);
 
-app.listen(env.PORT, () => {
-  console.log(`DocuMind API listening on port ${env.PORT}`);
-});
+if (require.main === module) {
+  app.listen(env.PORT, () => {
+    console.log(`DocuMind API listening on port ${env.PORT}`);
+  });
+}
+
+module.exports = app;
