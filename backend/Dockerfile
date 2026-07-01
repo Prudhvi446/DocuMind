@@ -17,5 +17,5 @@ COPY . .
 # Expose the API port
 EXPOSE 5000
 
-# Start the application
-CMD ["npm", "start"]
+# Start the application (run migrations then start server)
+CMD npx prisma migrate deploy && npm start
