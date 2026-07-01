@@ -20,7 +20,7 @@ export default {
         body: ['"Public Sans"', "sans-serif"],
       },
       boxShadow: {
-        "input-focus": "0 0 0 2px rgba(99, 102, 241, 0.4)",
+        "input-focus": "0 0 0 2px rgba(255, 255, 255, 0.4)",
       },
     },
   },
